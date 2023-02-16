@@ -1,16 +1,34 @@
 function getNeighbors(row, col, graph) {
-
-  // Check top
-
-  // Check bottom
-
-  // Check left
-
-  // Check right
-
-  // Return neighbors
-
   // Your code here
+  let neighbors = [];
+
+  // Up
+  if (row > 0) {
+    if (graph[row - 1][col] === 1){
+      neighbors.push([row - 1, col]);
+    }
+  }
+  // Down
+  if (row < graph.length - 1) {
+    if (graph[row + 1][col] === 1) {
+      neighbors.push([row + 1, col]);
+    }
+  }
+  // Left
+  if (col > 0) {
+    if (graph[row][col - 1] === 1) {
+      neighbors.push([row, col - 1]);
+    }
+  }
+
+  // Right
+  if (col < graph[0].length - 1) {
+    if (graph[row][col + 1] === 1) {
+      neighbors.push([row, col + 1]);
+    }
+  }
+
+  return neighbors;
 }
 
 
@@ -21,6 +39,7 @@ function islandSize(row, col, graph) {
   // Create a stack, put the starting node in the stack
 
   // Put the stringified starting node in visited
+
 
   // Initialize size to 0
 
